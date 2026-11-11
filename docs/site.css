@@ -1,0 +1,217 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif;
+  color: #112536;
+  background: #f3f6f8;
+  --accent: #076861;
+  --muted: #496070;
+  --border: #d9e3e8;
+  --surface: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  line-height: 1.5;
+}
+
+.shell {
+  width: min(1160px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.masthead {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.masthead-inner {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wordmark {
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.wordmark span,
+a {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.portal-link,
+.youtube-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.portal-link {
+  padding-block: 12px;
+}
+
+.portal-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+main {
+  padding-block: clamp(36px, 5vw, 66px) 56px;
+}
+
+.intro {
+  margin-bottom: clamp(24px, 3.5vw, 38px);
+}
+
+.course-unit {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.052em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.summary {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: minmax(0, 2.35fr) minmax(270px, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.video-card,
+.academic-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 5px 18px rgb(17 37 54 / 6%);
+}
+
+.video-card {
+  overflow: hidden;
+}
+
+.player {
+  position: relative;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  background: #061221;
+}
+
+.player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.player:focus-within {
+  outline: 3px solid #33b9ad;
+  outline-offset: -3px;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+}
+
+.youtube-link {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid #c4e4de;
+  border-radius: 8px;
+  background: #edf8f6;
+}
+
+.youtube-link:hover {
+  background: #ddf2ee;
+}
+
+.academic-card {
+  padding: clamp(21px, 2.4vw, 29px);
+}
+
+.academic-card h2 {
+  margin: 0;
+  font-size: 1.28rem;
+  line-height: 1.28;
+  letter-spacing: -0.022em;
+}
+
+.program {
+  margin: 7px 0 20px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+dl {
+  margin: 0;
+}
+
+dl > div {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+dl > div + div {
+  margin-top: 16px;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 4px 0 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+@media (max-width: 780px) {
+  .shell {
+    width: min(660px, calc(100% - 36px));
+  }
+
+  .presentation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
